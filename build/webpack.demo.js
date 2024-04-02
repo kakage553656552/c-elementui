@@ -10,7 +10,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const launchEditorMiddleware = require('launch-editor-middleware');
 
 const config = require('./config');
-
+const { codeInspectorPlugin } = require('code-inspector-plugin');
 const isProd = process.env.NODE_ENV === 'production';
 const isPlay = !!process.env.PLAY_ENV;
 
@@ -31,7 +31,7 @@ const webpackConfig = {
     modules: ['node_modules']
   },
   devServer: {
-    host: '0.0.0.0',
+    host: 'localhost',
     port: 8085,
     publicPath: '/',
     hot: true,
@@ -130,6 +130,10 @@ const webpackConfig = {
           preserveWhitespace: false
         }
       }
+    }),
+    codeInspectorPlugin({
+      bundler: 'webpack',
+      enforcePre: false
     })
   ],
   optimization: {
