@@ -1,18 +1,15 @@
 <template>
-  <div style="margin: 20px;width: 500px;">
-    <el-steps direction="horizontal" :active="2">
-      <el-step icon="el-icon-success" title="步骤 1"description="serthwserh serth ser hserh "></el-step>
-      <el-step title="步骤 2" description="sert hserth serh ser h"></el-step>
-      <el-step title="步骤 3"></el-step>
-    </el-steps>
-  </div>
+<div>
+  <div>hello world</div>
+  <el-input-number v-model="input" :min="1" :max="10" :step="1"></el-input-number>
+</div>
 </template>
 
 <script>
 export default {
   data () {
     return {
-      input: 'Hello Element UI!'
+      input: 1
     };
   }
 };
